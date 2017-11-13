@@ -1,5 +1,5 @@
 import XCTest
-@testable import Configurate
+import Configurate
 
 class ConfigurateTests: XCTestCase {
     

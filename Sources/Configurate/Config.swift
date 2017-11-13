@@ -22,6 +22,11 @@ public struct Config: KeyedAccessCollectionStack, ConfigType {
         self.mapStack = MapStack(dictionary: provider)
     }
     
+    public init() {
+        
+        self.mapStack = MapStack<String, Any>()
+    }
+    
     init(mapStack: MapStack<String, Any> = MapStack<String, Any>()) {
         
         self.mapStack = mapStack
