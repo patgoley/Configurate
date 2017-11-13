@@ -12,6 +12,11 @@ class ConfigFileTests: XCTestCase {
     
     func testPlistConfig() throws {
         
+        if !TestHelpers.isXcodeEnvironment() {
+            
+            return
+        }
+        
         let plistURL = Bundle(for: type(of: self)).resourceURL!.appendingPathComponent("test_config.plist")
         
         let configFile = try ConfigFile.plist(atURL: plistURL)
@@ -31,6 +36,11 @@ class ConfigFileTests: XCTestCase {
     }
     
     func testJSONConfig() throws {
+        
+        if !TestHelpers.isXcodeEnvironment() {
+            
+            return
+        }
         
         let plistURL = Bundle(for: type(of: self)).resourceURL!.appendingPathComponent("test_config.json")
         
