@@ -49,26 +49,14 @@ struct MapStack<K: Hashable, V>: KeyedAccessCollectionStack {
         stack.append(container)
     }
     
-    func stack<KeyedAccessType>(byPushing collection: KeyedAccessType) -> MapStack<Key, Value>
-        where KeyedAccessType: KeyedAccessCollection,
-        KeyedAccessType.Key == Key,
-        KeyedAccessType.Value == Value {
-            
-            let container = collection as? AnyKeyedAccessCollection<Key, Value> ?? AnyKeyedAccessCollection(collection)
-            
-            var mutableSelf = self
-            
-            mutableSelf.push(container)
-            
-            return mutableSelf
-    }
-    
-    func pop() -> AnyKeyedAccessCollection<Key, Value> {
+    mutating func pop() -> AnyKeyedAccessCollection<Key, Value> {
         
         guard let last = self.stack.last else {
             
             fatalError("Tried to pop an empty MapStack")
         }
+        
+        stack.remove(at: stack.endIndex - 1)
         
         return last
     }

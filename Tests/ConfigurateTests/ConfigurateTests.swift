@@ -37,11 +37,20 @@ class ConfigurateTests: XCTestCase {
         XCTAssertEqual(config["wow"], "process")
     }
     
+    func testConfigProvider() {
+        
+        let config = Config(["key": "first"])
+            .include(Config(["key": "second"]))
+        
+        XCTAssertEqual(config["key"], "second")
+    }
+    
     func testMultipleProviders() {
         
         userDefaults.set("override", forKey: "hello")
         
-        let config = Config(["hello": "world"])
+        let config = Config()
+            .include(["hello": "world"])
             .include([
                 "hello": "secondary",
                 "otherKey": "otherValue"
@@ -50,6 +59,35 @@ class ConfigurateTests: XCTestCase {
         
         XCTAssertEqual(config["hello"], "override")
         XCTAssertEqual(config["otherKey"], "otherValue")
+        XCTAssertNil(config["notAKey"])
+    }
+    
+    func testProviderFactory() {
+        
+        userDefaults.set("value", forKey: "hello")
+        
+        let config = Configurate.withDefaults(userDefaults)
+        
+        XCTAssertEqual(config["hello"], "value")
+    }
+    
+    func testDictionaryFactory() {
+        
+        let config = Configurate.withDefaults(["hello": "value"])
+        
+        XCTAssertEqual(config["hello"], "value")
+    }
+    
+    func testPop() {
+        
+        var config = Config(["key": "firstValue"])
+            .include(["key": "secondValue"])
+        
+        XCTAssertEqual(config["key"], "secondValue")
+        
+        config.pop()
+        
+        XCTAssertEqual(config["key"], "firstValue")
     }
 
     static var allTests = [

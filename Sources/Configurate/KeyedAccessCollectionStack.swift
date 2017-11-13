@@ -16,17 +16,6 @@ protocol KeyedAccessCollectionStack: KeyedAccessCollection {
 
 extension KeyedAccessCollectionStack {
     
-    mutating func push<KeyedAccessTypeSequence: Sequence>(contentsOf keyValueCollections: KeyedAccessTypeSequence)
-        where KeyedAccessTypeSequence.Element: KeyedAccessCollection,
-        KeyedAccessTypeSequence.Element.Key == Key,
-        KeyedAccessTypeSequence.Element.Value == Value {
-        
-        for collection in keyValueCollections {
-            
-            push(collection)
-        }
-    }
-    
     mutating public func push(_ dictionary: [Key: Value]) {
         
         let boxed = AnyKeyedAccessCollection(dictionary)

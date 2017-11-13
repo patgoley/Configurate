@@ -23,11 +23,6 @@ public extension KeyedAccessCollection {
 
 public extension KeyedAccessCollection where Value == Any {
     
-    func value<T>(forKey key: Key) -> T? {
-        
-        return get(key) as? T
-    }
-    
     subscript<T>(key: Key) -> T? {
         
         return get(key) as? T

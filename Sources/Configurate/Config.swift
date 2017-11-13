@@ -40,7 +40,7 @@ public struct Config: KeyedAccessCollectionStack, ConfigType {
         mapStack.push(collection)
     }
     
-    public func pop() -> AnyKeyedAccessCollection<String, Any> {
+    @discardableResult public mutating func pop() -> AnyKeyedAccessCollection<String, Any> {
         
         return mapStack.pop()
     }
@@ -53,11 +53,11 @@ extension Config {
         KeyedAccessType.Key == Key,
         KeyedAccessType.Value == Any {
             
-            var mutableSelf = self
-            
-            mutableSelf.push(collection)
-            
-            return mutableSelf
+        var mutableSelf = self
+        
+        mutableSelf.push(collection)
+        
+        return mutableSelf
     }
     
     public func include(_ dictionary: [String: Any]) -> Config {
