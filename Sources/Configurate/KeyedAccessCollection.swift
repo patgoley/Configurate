@@ -34,7 +34,7 @@ public extension KeyedAccessCollection where Value == Any {
     }
 }
 
-struct AnyKeyedAccessCollection<Key: Hashable, Value>: KeyedAccessCollection {
+public struct AnyKeyedAccessCollection<Key: Hashable, Value>: KeyedAccessCollection {
     
     private let _get: (Key) -> Value?
     
@@ -51,7 +51,7 @@ struct AnyKeyedAccessCollection<Key: Hashable, Value>: KeyedAccessCollection {
         }
     }
     
-    func get(_ key: Key) -> Value? {
+    public func get(_ key: Key) -> Value? {
         
         return _get(key)
     }

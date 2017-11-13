@@ -12,27 +12,12 @@ public struct Config: KeyedAccessCollectionStack, ConfigType {
     
     private var mapStack: MapStack<String, Any>
     
-    init<Provider: KeyedAccessCollection>(_ providers: Provider...)
-        where Provider.Key == Key,
-        Provider.Value == Value {
-            
-        self.mapStack = MapStack(keyValueCollections: providers)
-    }
-    
-    init<ProviderSequence: Sequence>(_ providers: ProviderSequence)
-        where ProviderSequence.Element: KeyedAccessCollection,
-        ProviderSequence.Element.Key == Key,
-        ProviderSequence.Element.Value == Value {
-        
-        self.mapStack = MapStack(keyValueCollections: providers)
-    }
-    
-    init<Provider: KeyedAccessCollection>(_ provider: Provider) where Provider.Key == Key, Provider.Value == Value {
+    public init<Provider: KeyedAccessCollection>(_ provider: Provider) where Provider.Key == Key, Provider.Value == Value {
         
         self.mapStack = MapStack(keyValueCollection: provider)
     }
     
-    init(_ provider: [String: Any]) {
+    public init(_ provider: [String: Any]) {
         
         self.mapStack = MapStack(dictionary: provider)
     }
@@ -47,7 +32,7 @@ public struct Config: KeyedAccessCollectionStack, ConfigType {
         return mapStack.get(key)
     }
     
-    mutating func push<KeyedAccessType>(_ collection: KeyedAccessType)
+    public mutating func push<KeyedAccessType>(_ collection: KeyedAccessType)
         where KeyedAccessType: KeyedAccessCollection,
         Config.Key == KeyedAccessType.Key,
         Config.Value == KeyedAccessType.Value {
@@ -55,7 +40,7 @@ public struct Config: KeyedAccessCollectionStack, ConfigType {
         mapStack.push(collection)
     }
     
-    func pop() -> AnyKeyedAccessCollection<String, Any> {
+    public func pop() -> AnyKeyedAccessCollection<String, Any> {
         
         return mapStack.pop()
     }

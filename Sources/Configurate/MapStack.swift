@@ -12,14 +12,6 @@ struct MapStack<K: Hashable, V>: KeyedAccessCollectionStack {
     
     private var stack: [AnyKeyedAccessCollection<Key, Value>]
     
-    init<CollectionSequence: Sequence>(keyValueCollections: CollectionSequence)
-        where CollectionSequence.Element: KeyedAccessCollection, CollectionSequence.Element.Key == Key, CollectionSequence.Element.Value == Value {
-        
-        self.init()
-            
-        push(contentsOf: keyValueCollections)
-    }
-    
     init<Collection: KeyedAccessCollection>(keyValueCollection: Collection) where Collection.Key == Key, Collection.Value == Value {
         
         self.stack = [AnyKeyedAccessCollection(keyValueCollection)]

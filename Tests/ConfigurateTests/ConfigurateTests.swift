@@ -32,7 +32,7 @@ class ConfigurateTests: XCTestCase {
         
         ProcessInfo.processInfo.setEnvironmentVar(name: "wow", value: "process")
         
-        let config = Config().include(ProcessInfo.processInfo)
+        let config = Config(ProcessInfo.processInfo)
         
         XCTAssertEqual(config["wow"], "process")
     }
