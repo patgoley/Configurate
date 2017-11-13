@@ -51,7 +51,7 @@ struct MapStack<K: Hashable, V>: KeyedAccessCollectionStack {
     
     mutating func pop() -> AnyKeyedAccessCollection<Key, Value> {
         
-        guard let last = self.stack.last else {
+        guard let last = stack.last else {
             
             fatalError("Tried to pop an empty MapStack")
         }

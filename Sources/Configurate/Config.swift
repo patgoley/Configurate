@@ -27,11 +27,6 @@ public struct Config: KeyedAccessCollectionStack, ConfigType {
         self.mapStack = MapStack<String, Any>()
     }
     
-    init(mapStack: MapStack<String, Any> = MapStack<String, Any>()) {
-        
-        self.mapStack = mapStack
-    }
-    
     public func get(_ key: String) -> Any? {
         
         return mapStack.get(key)

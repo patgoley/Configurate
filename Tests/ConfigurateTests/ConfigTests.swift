@@ -76,9 +76,10 @@ class ConfigTests: XCTestCase {
         
         XCTAssertEqual(config["key"], "secondValue")
         
-        config.pop()
+        let popped = config.pop()
         
         XCTAssertEqual(config["key"], "firstValue")
+        XCTAssertEqual(popped["key"], "secondValue")
     }
     
     static var allTests = [
