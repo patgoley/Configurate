@@ -12,7 +12,7 @@ class ConfigFileTests: XCTestCase {
     
     func testPlistConfig() throws {
         
-        if !TestHelpers.isXcodeEnvironment() {
+        if !TestHelpers.isXcodeEnvironment {
             
             return
         }
@@ -37,7 +37,7 @@ class ConfigFileTests: XCTestCase {
     
     func testJSONConfig() throws {
         
-        if !TestHelpers.isXcodeEnvironment() {
+        if !TestHelpers.isXcodeEnvironment {
             
             return
         }

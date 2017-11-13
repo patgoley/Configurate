@@ -9,8 +9,8 @@ import Foundation
 
 struct TestHelpers {
     
-    static func isXcodeEnvironment() -> Bool {
+    static let isXcodeEnvironment: Bool = {
         
         return UserDefaults.standard.bool(forKey: "com.configurate.isXcodeEnv")
-    }
+    }()
 }
