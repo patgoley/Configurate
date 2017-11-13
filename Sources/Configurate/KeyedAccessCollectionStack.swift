@@ -11,7 +11,7 @@ protocol KeyedAccessCollectionStack: KeyedAccessCollection {
         where KeyedAccessType.Key == Key,
         KeyedAccessType.Value == Value
     
-    @discardableResult mutating func pop() -> AnyKeyedAccessCollection<Key, Value >
+    @discardableResult mutating func pop() -> AnyKeyedAccessCollection<Key, Value>
 }
 
 extension KeyedAccessCollectionStack {
