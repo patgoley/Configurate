@@ -12,12 +12,9 @@ class ConfigFileTests: XCTestCase {
     
     func testPlistConfig() throws {
         
-        if !TestHelpers.isXcodeEnvironment {
-            
-            return
-        }
+        print("yep")
         
-        let plistURL = Bundle(for: type(of: self)).resourceURL!.appendingPathComponent("test_config.plist")
+        let plistURL = Bundle.main.resourceURL!.appendingPathComponent("test_config.plist")
         
         let configFile = try ConfigFile.plist(atURL: plistURL)
         
@@ -30,19 +27,14 @@ class ConfigFileTests: XCTestCase {
     
     func testMissingPlistConfigThrows() {
         
-        let plistURL = Bundle(for: type(of: self)).resourceURL!.appendingPathComponent("not_a_file.plist")
+        let plistURL = Bundle.main.resourceURL!.appendingPathComponent("not_a_file.plist")
         
         XCTAssertThrowsError(try ConfigFile.plist(atURL: plistURL))
     }
     
     func testJSONConfig() throws {
         
-        if !TestHelpers.isXcodeEnvironment {
-            
-            return
-        }
-        
-        let plistURL = Bundle(for: type(of: self)).resourceURL!.appendingPathComponent("test_config.json")
+        let plistURL = Bundle.main.resourceURL!.appendingPathComponent("test_config.json")
         
         let configFile = try ConfigFile.json(atURL: plistURL)
         
@@ -55,7 +47,7 @@ class ConfigFileTests: XCTestCase {
     
     func testMissingJSONConfigThrows() {
         
-        let plistURL = Bundle(for: type(of: self)).resourceURL!.appendingPathComponent("not_a_file.json")
+        let plistURL = Bundle.main.resourceURL!.appendingPathComponent("not_a_file.json")
         
         XCTAssertThrowsError(try ConfigFile.json(atURL: plistURL))
     }

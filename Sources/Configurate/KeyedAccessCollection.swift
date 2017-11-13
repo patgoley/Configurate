@@ -33,12 +33,12 @@ public struct AnyKeyedAccessCollection<Key: Hashable, Value>: KeyedAccessCollect
     
     private let _get: (Key) -> Value?
     
-    init<Base: KeyedAccessCollection>(_ base: Base) where Base.Key == Key, Base.Value == Value {
+    public init<Base: KeyedAccessCollection>(_ base: Base) where Base.Key == Key, Base.Value == Value {
         
         _get = base.get
     }
     
-    init(_ dict: [Key: Value]) {
+    public init(_ dict: [Key: Value]) {
         
         _get = { (key: Key) -> Value? in
             
