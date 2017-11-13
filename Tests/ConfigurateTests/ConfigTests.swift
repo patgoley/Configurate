@@ -29,7 +29,8 @@ class ConfigTests: XCTestCase {
         
         let anyConfig = AnyKeyedAccessCollection<String, Any>(["hello": "first"])
         
-        let config = Config(anyConfig)
+        let config = Config()
+            .include(anyConfig)
             .include([
                 "hello": "second",
                 "otherKey": "otherValue"
