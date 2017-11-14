@@ -10,38 +10,11 @@ import Configurate
 
 class ConfigTests: XCTestCase {
     
-    var userDefaults: UserDefaults!
-    
-    override func setUp() {
-        
-        userDefaults = UserDefaults(suiteName: "test")
-        userDefaults.removeSuite(named: "test")
-        userDefaults.synchronize()
-    }
-    
     func testDictionaryProvider() {
         
         let config = Config(["hello": "world"])
         
         XCTAssertEqual(config["hello"], "world")
-    }
-    
-    func testUserDefaultsProvider() {
-        
-        userDefaults.set("cool", forKey: "wow")
-        
-        let config = Config(userDefaults)
-        
-        XCTAssertEqual(config["wow"], "cool")
-    }
-    
-    func testProcessInfoProvider() {
-        
-        ProcessInfo.processInfo.setEnvironmentVar(name: "wow", value: "process")
-        
-        let config = Config(ProcessInfo.processInfo)
-        
-        XCTAssertEqual(config["wow"], "process")
     }
     
     func testConfigProvider() {
@@ -54,17 +27,19 @@ class ConfigTests: XCTestCase {
     
     func testMultipleProviders() {
         
-        userDefaults.set("override", forKey: "hello")
+        let anyConfig = AnyKeyedAccessCollection<String, Any>(["hello": "first"])
         
         let config = Config()
-            .include(["hello": "world"])
+            .include(anyConfig)
             .include([
-                "hello": "secondary",
+                "hello": "second",
                 "otherKey": "otherValue"
-                ])
-            .include(userDefaults)
+            ])
+            .include([
+                "hello": "third"
+            ])
         
-        XCTAssertEqual(config["hello"], "override")
+        XCTAssertEqual(config["hello"], "third")
         XCTAssertEqual(config["otherKey"], "otherValue")
         XCTAssertNil(config["notAKey"])
     }
@@ -76,15 +51,14 @@ class ConfigTests: XCTestCase {
         
         XCTAssertEqual(config["key"], "secondValue")
         
-        config.pop()
+        let popped = config.pop()
         
         XCTAssertEqual(config["key"], "firstValue")
+        XCTAssertEqual(popped["key"], "secondValue")
     }
     
     static var allTests = [
         ("testDictionaryProvider", testDictionaryProvider),
-        ("testUserDefaultsProvider", testUserDefaultsProvider),
-        ("testProcessInfoProvider", testProcessInfoProvider),
         ("testConfigProvider", testConfigProvider),
         ("testMultipleProviders", testMultipleProviders),
         ("testPop", testPop)
