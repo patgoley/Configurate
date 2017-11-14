@@ -4,4 +4,5 @@ import XCTest
 XCTMain([
     testCase(ConfigurateTests.allTests),
     testCase(ConfigTests.allTests),
+    testCase(ProcessInfoConfigTests.allTests),
 ])
