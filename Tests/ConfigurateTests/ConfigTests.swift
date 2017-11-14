@@ -39,7 +39,9 @@ class ConfigTests: XCTestCase {
                 "hello": "third"
             ])
         
-        XCTAssertEqual(config["hello"], "third")
+        let res: String? = config["hello"]
+        
+        XCTAssertEqual(res, "third")
         XCTAssertEqual(config["otherKey"], "otherValue")
         XCTAssertNil(config["notAKey"])
     }
