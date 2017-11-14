@@ -1,4 +1,4 @@
-FROM ibmcom/swift-ubuntu
+FROM swiftdocker/swift
 
 WORKDIR /package
 
