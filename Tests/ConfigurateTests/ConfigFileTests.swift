@@ -14,7 +14,7 @@ class ConfigFileTests: XCTestCase {
         
         let plistURL = Bundle(for: type(of: self)).resourceURL!.appendingPathComponent("test_config.plist")
         
-        let configFile = try ConfigFile.plist(atURL: plistURL)
+        let configFile = try ConfigFile(plistAtURL: plistURL)
         
         let config = Config(["file_type": "none", "key": "first"])
             .include(configFile)
@@ -27,14 +27,14 @@ class ConfigFileTests: XCTestCase {
         
         let plistURL = Bundle(for: type(of: self)).resourceURL!.appendingPathComponent("not_a_file.plist")
         
-        XCTAssertThrowsError(try ConfigFile.plist(atURL: plistURL))
+        XCTAssertThrowsError(try ConfigFile(plistAtURL: plistURL))
     }
     
     func testJSONConfig() throws {
         
-        let plistURL = Bundle(for: type(of: self)).resourceURL!.appendingPathComponent("test_config.json")
+        let jsonURL = Bundle(for: type(of: self)).resourceURL!.appendingPathComponent("test_config.json")
         
-        let configFile = try ConfigFile.json(atURL: plistURL)
+        let configFile = try ConfigFile(jsonAtURL: jsonURL)
         
         let config = Config(["file_type": "none", "key": "first"])
             .include(configFile)
@@ -45,9 +45,32 @@ class ConfigFileTests: XCTestCase {
     
     func testMissingJSONConfigThrows() {
         
-        let plistURL = Bundle(for: type(of: self)).resourceURL!.appendingPathComponent("not_a_file.json")
+        let jsonURL = Bundle(for: type(of: self)).resourceURL!.appendingPathComponent("not_a_file.json")
         
-        XCTAssertThrowsError(try ConfigFile.json(atURL: plistURL))
+        XCTAssertThrowsError(try ConfigFile(jsonAtURL: jsonURL))
+    }
+    
+    func testURLInit() throws {
+        
+        let plistURL = Bundle(for: type(of: self)).resourceURL!.appendingPathComponent("test_config.plist")
+        let jsonURL = Bundle(for: type(of: self)).resourceURL!.appendingPathComponent("test_config.json")
+        
+        let plistConfig = try ConfigFile(url: plistURL)
+        let jsonConfig = try ConfigFile(url: jsonURL)
+        
+        XCTAssertEqual(plistConfig["file_type"], "plist")
+        XCTAssertEqual(jsonConfig["file_type"], "json")
+    }
+    
+    func testURLInitErrors() throws {
+        
+        let textURL = URL(fileURLWithPath: "file.text")
+        
+        XCTAssertThrowsError(try ConfigFile(url: textURL))
+        
+        let url = URL(fileURLWithPath: "")
+        
+        XCTAssertThrowsError(try ConfigFile(url: url))
     }
     
     static var allTests = [
