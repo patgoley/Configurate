@@ -21,11 +21,11 @@ class UserDefaultsConfigTests: XCTestCase {
     
     func testUserDefaultsProvider() {
         
-        userDefaults.set("cool", forKey: "wow")
+        userDefaults.set("value", forKey: "key")
         
         let config = Config(userDefaults)
         
-        XCTAssertEqual(config["wow"], "cool")
+        XCTAssertEqual(config["key"], "value")
     }
     
     static var allTests = [
