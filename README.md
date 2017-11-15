@@ -1,5 +1,7 @@
 # Configurate
 
+[![CocoaPods](https://img.shields.io/cocoapods/v/Configurate.svg)]()
+
 Configurate is a package for building layered `Config` objects, which are essentially stacks of key-value collections.
 Configs are protocol based, so they can be implemented by any source that can provide a value for a given key.
 
@@ -16,6 +18,27 @@ let value: String? = config["someKey"]                  // Infers expected retur
 
 The key value collections included in the `Config` are searched in reverse order, so that values from one collection override values from previously added collections.
 
+## Installation
+
+#### Swift Package Manager
+
+```swift
+import PackageDescription
+
+let package = Package(
+    name: "MyPackage",
+    dependencies: [
+        .Package(url: "https://github.com/patgoley/Configurate.git", majorVersion: 1),
+    ]
+)
+```
+
+#### Cocoapods
+
+```ruby
+pod 'Configurate', '~> 1.0'
+```
+
 ## License
 
-[MIT](LICENSE.md)
+[MIT](LICENSE)
