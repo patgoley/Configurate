@@ -31,6 +31,12 @@ let package = Package(
 )
 ```
 
+#### Cocoapods
+
+```ruby
+pod 'Configurate', '~> 1.0'
+```
+
 ## License
 
 [MIT](LICENSE)
