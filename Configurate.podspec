@@ -10,7 +10,7 @@ Configurate provides a common interface for configuration type objects (e.g. Use
 It also provides a builder pattern for composing configurations into a single Config object.
                        DESC
 
-  s.homepage         = 'https://github.com/patrickGoley/Configurate'
+  s.homepage         = 'https://github.com/patgoley/Configurate'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'patrickGoley' => 'patrick.goley@gmail.com' }
   s.source           = { :git => 'https://github.com/patgoley/Configurate.git', :tag => s.version.to_s }
