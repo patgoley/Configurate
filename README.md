@@ -16,6 +16,21 @@ let value: String? = config["someKey"]                  // Infers expected retur
 
 The key value collections included in the `Config` are searched in reverse order, so that values from one collection override values from previously added collections.
 
+## Installation
+
+#### Swift Package Manager
+
+```swift
+import PackageDescription
+
+let package = Package(
+    name: "MyPackage",
+    dependencies: [
+        .Package(url: "https://github.com/patgoley/Configurate.git", majorVersion: 1),
+    ]
+)
+```
+
 ## License
 
 [MIT](LICENSE.md)
