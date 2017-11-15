@@ -18,4 +18,4 @@ The key value collections included in the `Config` are searched in reverse order
 
 ## License
 
-[LICENSE.md](MIT)
+[MIT](LICENSE.md)
