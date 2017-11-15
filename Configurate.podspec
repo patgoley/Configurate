@@ -13,7 +13,7 @@ It also provides a builder pattern for composing configurations into a single Co
   s.homepage         = 'https://github.com/patrickGoley/Configurate'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'patrickGoley' => 'patrick.goley@gmail.com' }
-  s.source           = { :git => 'https://github.com/patrickGoley/Configurate.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/patgoley/Configurate.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/bitsbetweenbits'
 
   s.ios.deployment_target = '8.0'

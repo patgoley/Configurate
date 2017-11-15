@@ -33,4 +33,4 @@ let package = Package(
 
 ## License
 
-[MIT](LICENSE.md)
+[MIT](LICENSE)
