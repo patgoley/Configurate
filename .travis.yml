@@ -1,14 +1,14 @@
 matrix:
-    include:
-        - os: linux
-        language: generic
-        dist: trusty
-        sudo: required
-        - os: osx
-        language: objective-c
-        osx_image: xcode9.1
+  include:
+    - os: linux
+      language: generic
+      dist: trusty
+      sudo: required
+    - os: osx
+      language: objective-c
+      osx_image: xcode9.1
 script:
-    - chmod ugo+x ./bin/run_tests.sh
-    - chmod ugo+x ./bin/docker_linux_test.sh
-    - . ./bin/run-tests.sh
+  - chmod ugo+x ./bin/run_tests.sh
+  - chmod ugo+x ./bin/docker_linux_test.sh
+  - . ./bin/run-tests.sh
 
