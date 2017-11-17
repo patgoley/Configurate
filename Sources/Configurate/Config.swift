@@ -17,11 +17,6 @@ public struct Config: KeyedAccessCollectionStack, ConfigType {
         self.mapStack = MapStack(keyValueCollection: provider)
     }
     
-    public init(_ provider: [String: Any]) {
-        
-        self.mapStack = MapStack(dictionary: provider)
-    }
-    
     public init() {
         
         self.mapStack = MapStack<String, Any>()
@@ -56,15 +51,6 @@ extension Config {
         var mutableSelf = self
         
         mutableSelf.push(collection)
-        
-        return mutableSelf
-    }
-    
-    public func include(_ dictionary: [String: Any]) -> Config {
-        
-        var mutableSelf = self
-        
-        mutableSelf.push(dictionary)
         
         return mutableSelf
     }
