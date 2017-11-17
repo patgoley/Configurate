@@ -17,13 +17,6 @@ struct MapStack<K: Hashable, V>: KeyedAccessCollectionStack {
         self.stack = [AnyKeyedAccessCollection(keyValueCollection)]
     }
     
-    init(dictionary: [Key: Value]) {
-        
-        let anyCollection = AnyKeyedAccessCollection(dictionary)
-        
-        self.stack = [anyCollection]
-    }
-    
     init() {
         
         self.stack = []

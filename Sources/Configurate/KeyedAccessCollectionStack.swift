@@ -13,13 +13,3 @@ protocol KeyedAccessCollectionStack: KeyedAccessCollection {
     
     @discardableResult mutating func pop() -> AnyKeyedAccessCollection<Key, Value>
 }
-
-extension KeyedAccessCollectionStack {
-    
-    mutating public func push(_ dictionary: [Key: Value]) {
-        
-        let boxed = AnyKeyedAccessCollection(dictionary)
-        
-        push(boxed)
-    }
-}
