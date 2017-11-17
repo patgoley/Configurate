@@ -1,6 +1,6 @@
 # Configurate
 
-[![CocoaPods](https://img.shields.io/cocoapods/v/Configurate.svg)]() [![CocoaPods](https://img.shields.io/cocoapods/l/Configurate.svg)]()
+[![CocoaPods](https://img.shields.io/cocoapods/v/Configurate.svg)]() [![CocoaPods](https://img.shields.io/cocoapods/l/Configurate.svg)]() [![Travis](https://travis-ci.org/patgoley/Configurate.svg?branch=master)]() [![codecov](https://codecov.io/gh/patgoley/Configurate/branch/master/graph/badge.svg)]()
 
 Configurate is a package for building layered `Config` objects, which are essentially stacks of key-value collections.
 Configs are protocol based, so they can be implemented by any source that can provide a value for a given key.
