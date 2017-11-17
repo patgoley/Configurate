@@ -12,7 +12,9 @@ public struct Config: KeyedAccessCollectionStack, ConfigType {
     
     private var mapStack: MapStack<String, Any>
     
-    public init<Provider: KeyedAccessCollection>(_ provider: Provider) where Provider.Key == Key, Provider.Value == Value {
+    public init<Provider: KeyedAccessCollection>(_ provider: Provider)
+        where Provider.Key == Key,
+        Provider.Value == Value {
         
         self.mapStack = MapStack(keyValueCollection: provider)
     }
@@ -27,9 +29,8 @@ public struct Config: KeyedAccessCollectionStack, ConfigType {
         return mapStack.get(key)
     }
     
-    public mutating func push<KeyedAccessType>(_ collection: KeyedAccessType)
-        where KeyedAccessType: KeyedAccessCollection,
-        Config.Key == KeyedAccessType.Key,
+    public mutating func push<KeyedAccessType: KeyedAccessCollection>(_ collection: KeyedAccessType)
+        where Config.Key == KeyedAccessType.Key,
         Config.Value == KeyedAccessType.Value {
         
         mapStack.push(collection)
@@ -43,14 +44,14 @@ public struct Config: KeyedAccessCollectionStack, ConfigType {
 
 extension Config {
     
-    public func include<KeyedAccessType>(_ collection: KeyedAccessType) -> Config
+    public func include<KeyedAccessType>(_ provider: KeyedAccessType) -> Config
         where KeyedAccessType: KeyedAccessCollection,
         KeyedAccessType.Key == Key,
         KeyedAccessType.Value == Any {
             
         var mutableSelf = self
         
-        mutableSelf.push(collection)
+        mutableSelf.push(provider)
         
         return mutableSelf
     }
