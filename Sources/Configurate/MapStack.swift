@@ -9,8 +9,9 @@ struct MapStack<K: Hashable, V>: KeyedAccessCollectionStack {
     
     typealias Key = K
     typealias Value = V
+    typealias Element = AnyKeyedAccessCollection<Key, Value>
     
-    private var stack: [AnyKeyedAccessCollection<Key, Value>]
+    private var stack: [Element]
     
     init<Collection: KeyedAccessCollection>(keyValueCollection: Collection)
         where Collection.Key == Key,
@@ -37,21 +38,22 @@ struct MapStack<K: Hashable, V>: KeyedAccessCollectionStack {
         return nil
     }
     
-    mutating func push<KeyedAccessType: KeyedAccessCollection>(_ collection: KeyedAccessType)
-        where KeyedAccessType.Key == Key,
-        KeyedAccessType.Value == Value {
+    mutating func push(_ element: Element) {
         
-        let container = collection as? AnyKeyedAccessCollection<Key, Value> ?? AnyKeyedAccessCollection(collection)
-        
-        stack.append(container)
+        stack.append(element)
     }
     
-    @discardableResult mutating func pop() -> AnyKeyedAccessCollection<Key, Value> {
+    mutating func pop() -> Element {
         
         guard let last = stack.last else { fatalError("Tried to pop an empty MapStack") }
         
         stack.remove(at: stack.endIndex - 1)
         
         return last
+    }
+    
+    func makeIterator() -> IndexingIterator<[AnyKeyedAccessCollection<Key, Value>]> {
+        
+        return stack.reversed().makeIterator()
     }
 }

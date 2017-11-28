@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		8E3659A11FBEA63000F8B109 /* Dictionary+KeyedAccessCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3659A01FBEA63000F8B109 /* Dictionary+KeyedAccessCollection.swift */; };
+		8E3659A41FC03D1900F8B109 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3659A21FC03C7200F8B109 /* Stack.swift */; };
 		8E7562F11FB94BAD008D59FC /* test_config.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8E7B3AB81FB949F50015A002 /* test_config.json */; };
 		8E7562F21FB94BB0008D59FC /* test_config.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8E7B3AB91FB949F50015A002 /* test_config.plist */; };
 		8E7562F41FB95344008D59FC /* ConfigFileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7562F31FB95344008D59FC /* ConfigFileTests.swift */; };
@@ -73,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		8E3659A01FBEA63000F8B109 /* Dictionary+KeyedAccessCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+KeyedAccessCollection.swift"; sourceTree = "<group>"; };
+		8E3659A21FC03C7200F8B109 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		8E7562F31FB95344008D59FC /* ConfigFileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigFileTests.swift; sourceTree = "<group>"; };
 		8E7562F51FB953D3008D59FC /* ConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigTests.swift; sourceTree = "<group>"; };
 		8E7562F91FB962E0008D59FC /* Dockerfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dockerfile; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				8E7B3AB11FB9458B0015A002 /* ConfigFile.swift */,
 				8EE42F421FB8FC1C0080D6D5 /* ConfigType.swift */,
 				8EE42F401FB8FBF50080D6D5 /* MapStack.swift */,
+				8E3659A21FC03C7200F8B109 /* Stack.swift */,
 				8EE42F3E1FB8FB730080D6D5 /* KeyedAccessCollectionStack.swift */,
 				8EE42F3C1FB8FB4B0080D6D5 /* KeyedAccessCollection.swift */,
 				8E3659A01FBEA63000F8B109 /* Dictionary+KeyedAccessCollection.swift */,
@@ -306,6 +309,7 @@
 			buildActionMask = 0;
 			files = (
 				8EE42F441FB8FEE60080D6D5 /* ConfigType.swift in Sources */,
+				8E3659A41FC03D1900F8B109 /* Stack.swift in Sources */,
 				8EE42F471FB8FEF70080D6D5 /* MapStack.swift in Sources */,
 				8E3659A11FBEA63000F8B109 /* Dictionary+KeyedAccessCollection.swift in Sources */,
 				8EE42F451FB8FEEA0080D6D5 /* KeyedAccessCollection.swift in Sources */,
