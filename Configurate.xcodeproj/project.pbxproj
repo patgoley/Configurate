@@ -128,27 +128,6 @@
 			path = bin;
 			sourceTree = "<group>";
 		};
-		8E8B6E901FCE68A400B844A4 /* Config Types */ = {
-			isa = PBXGroup;
-			children = (
-				8E3659A01FBEA63000F8B109 /* Dictionary+KeyedAccessCollection.swift */,
-				8E8B6E8E1FCE66BE00B844A4 /* FoundationConfigTypes.swift */,
-				8E7B3AB11FB9458B0015A002 /* ConfigFile.swift */,
-			);
-			path = "Config Types";
-			sourceTree = SOURCE_ROOT;
-		};
-		8E8B6E911FCE68D700B844A4 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				8EE42F3C1FB8FB4B0080D6D5 /* KeyedAccessCollection.swift */,
-				8E3659A21FC03C7200F8B109 /* Stack.swift */,
-				8EE42F3E1FB8FB730080D6D5 /* KeyedAccessCollectionStack.swift */,
-				8EE42F421FB8FC1C0080D6D5 /* ConfigType.swift */,
-			);
-			path = Protocols;
-			sourceTree = SOURCE_ROOT;
-		};
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,8 +189,13 @@
 			children = (
 				8EE42F481FB902C90080D6D5 /* Config.swift */,
 				8EE42F401FB8FBF50080D6D5 /* MapStack.swift */,
-				8E8B6E911FCE68D700B844A4 /* Protocols */,
-				8E8B6E901FCE68A400B844A4 /* Config Types */,
+				8EE42F3C1FB8FB4B0080D6D5 /* KeyedAccessCollection.swift */,
+				8E3659A21FC03C7200F8B109 /* Stack.swift */,
+				8EE42F3E1FB8FB730080D6D5 /* KeyedAccessCollectionStack.swift */,
+				8EE42F421FB8FC1C0080D6D5 /* ConfigType.swift */,
+				8E3659A01FBEA63000F8B109 /* Dictionary+KeyedAccessCollection.swift */,
+				8E8B6E8E1FCE66BE00B844A4 /* FoundationConfigTypes.swift */,
+				8E7B3AB11FB9458B0015A002 /* ConfigFile.swift */,
 			);
 			name = Configurate;
 			path = Sources/Configurate;
