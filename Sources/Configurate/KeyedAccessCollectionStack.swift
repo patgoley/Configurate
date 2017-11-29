@@ -7,8 +7,8 @@
 
 protocol KeyedAccessCollectionStack: KeyedAccessCollection, Stack
     where Element: KeyedAccessCollection,
-    Iterator.Element.Key == Key,
-    Iterator.Element.Value == Value {
+    Element.Key == Key,
+    Element.Value == Value {
     
 }
 
@@ -34,9 +34,9 @@ extension KeyedAccessCollectionStack where Element == AnyKeyedAccessCollection<K
         where KeyedAccessType.Key == Key,
         KeyedAccessType.Value == Value {
 
-            let container = collection as? AnyKeyedAccessCollection<Key, Value> ?? AnyKeyedAccessCollection<Key, Value>(collection)
+        let container = collection as? AnyKeyedAccessCollection<Key, Value> ?? AnyKeyedAccessCollection<Key, Value>(collection)
 
-            self.push(container)
+        push(container)
     }
 }
 
