@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		8E3659A11FBEA63000F8B109 /* Dictionary+KeyedAccessCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3659A01FBEA63000F8B109 /* Dictionary+KeyedAccessCollection.swift */; };
+		8E3659A41FC03D1900F8B109 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3659A21FC03C7200F8B109 /* Stack.swift */; };
 		8E7562F11FB94BAD008D59FC /* test_config.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8E7B3AB81FB949F50015A002 /* test_config.json */; };
 		8E7562F21FB94BB0008D59FC /* test_config.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8E7B3AB91FB949F50015A002 /* test_config.plist */; };
 		8E7562F41FB95344008D59FC /* ConfigFileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7562F31FB95344008D59FC /* ConfigFileTests.swift */; };
@@ -29,15 +30,14 @@
 		8E7562FD1FB96B1B008D59FC /* UserDefaultsConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7562FC1FB96B1B008D59FC /* UserDefaultsConfigTests.swift */; };
 		8E7562FF1FB96B5A008D59FC /* ProcessInfoConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7562FE1FB96B5A008D59FC /* ProcessInfoConfigTests.swift */; };
 		8E7B3AB31FB9475E0015A002 /* ConfigFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B3AB11FB9458B0015A002 /* ConfigFile.swift */; };
+		8E8B6E8F1FCE66BE00B844A4 /* FoundationConfigTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8B6E8E1FCE66BE00B844A4 /* FoundationConfigTypes.swift */; };
 		8EE42F441FB8FEE60080D6D5 /* ConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F421FB8FC1C0080D6D5 /* ConfigType.swift */; };
 		8EE42F451FB8FEEA0080D6D5 /* KeyedAccessCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F3C1FB8FB4B0080D6D5 /* KeyedAccessCollection.swift */; };
 		8EE42F461FB8FEF50080D6D5 /* KeyedAccessCollectionStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F3E1FB8FB730080D6D5 /* KeyedAccessCollectionStack.swift */; };
 		8EE42F471FB8FEF70080D6D5 /* MapStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F401FB8FBF50080D6D5 /* MapStack.swift */; };
 		8EE42F4A1FB902EF0080D6D5 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F481FB902C90080D6D5 /* Config.swift */; };
 		OBJ_21 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_27 /* ConfigurateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* ConfigurateTests.swift */; };
 		OBJ_29 /* Configurate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Configurate::Configurate::Product" /* Configurate.framework */; };
-		OBJ_36 /* Configurate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Configurate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		8E3659A01FBEA63000F8B109 /* Dictionary+KeyedAccessCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+KeyedAccessCollection.swift"; sourceTree = "<group>"; };
+		8E3659A21FC03C7200F8B109 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		8E7562F31FB95344008D59FC /* ConfigFileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigFileTests.swift; sourceTree = "<group>"; };
 		8E7562F51FB953D3008D59FC /* ConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigTests.swift; sourceTree = "<group>"; };
 		8E7562F91FB962E0008D59FC /* Dockerfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dockerfile; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 		8E8236B91FBD2A71003EE6BD /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		8E8236BB1FBD2B5A003EE6BD /* docker_linux_test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = docker_linux_test.sh; sourceTree = "<group>"; };
 		8E8236BC1FBD2B77003EE6BD /* run_tests.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run_tests.sh; sourceTree = "<group>"; };
+		8E8B6E8E1FCE66BE00B844A4 /* FoundationConfigTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationConfigTypes.swift; sourceTree = "<group>"; };
 		8EE42F3C1FB8FB4B0080D6D5 /* KeyedAccessCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedAccessCollection.swift; sourceTree = "<group>"; };
 		8EE42F3E1FB8FB730080D6D5 /* KeyedAccessCollectionStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedAccessCollectionStack.swift; sourceTree = "<group>"; };
 		8EE42F401FB8FBF50080D6D5 /* MapStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStack.swift; sourceTree = "<group>"; };
@@ -95,9 +97,7 @@
 		8EE42F481FB902C90080D6D5 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		"Configurate::Configurate::Product" /* Configurate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Configurate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Configurate::ConfigurateTests::Product" /* ConfigurateTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = ConfigurateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_12 /* ConfigurateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurateTests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_9 /* Configurate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +140,6 @@
 		OBJ_11 /* ConfigurateTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_12 /* ConfigurateTests.swift */,
 				8E7562F51FB953D3008D59FC /* ConfigTests.swift */,
 				8E7562FC1FB96B1B008D59FC /* UserDefaultsConfigTests.swift */,
 				8E7562FE1FB96B5A008D59FC /* ProcessInfoConfigTests.swift */,
@@ -188,14 +187,15 @@
 		OBJ_8 /* Configurate */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_9 /* Configurate.swift */,
 				8EE42F481FB902C90080D6D5 /* Config.swift */,
-				8E7B3AB11FB9458B0015A002 /* ConfigFile.swift */,
-				8EE42F421FB8FC1C0080D6D5 /* ConfigType.swift */,
 				8EE42F401FB8FBF50080D6D5 /* MapStack.swift */,
-				8EE42F3E1FB8FB730080D6D5 /* KeyedAccessCollectionStack.swift */,
 				8EE42F3C1FB8FB4B0080D6D5 /* KeyedAccessCollection.swift */,
+				8E3659A21FC03C7200F8B109 /* Stack.swift */,
+				8EE42F3E1FB8FB730080D6D5 /* KeyedAccessCollectionStack.swift */,
+				8EE42F421FB8FC1C0080D6D5 /* ConfigType.swift */,
 				8E3659A01FBEA63000F8B109 /* Dictionary+KeyedAccessCollection.swift */,
+				8E8B6E8E1FCE66BE00B844A4 /* FoundationConfigTypes.swift */,
+				8E7B3AB11FB9458B0015A002 /* ConfigFile.swift */,
 			);
 			name = Configurate;
 			path = Sources/Configurate;
@@ -295,7 +295,6 @@
 			files = (
 				8E7562FF1FB96B5A008D59FC /* ProcessInfoConfigTests.swift in Sources */,
 				8E7562FD1FB96B1B008D59FC /* UserDefaultsConfigTests.swift in Sources */,
-				OBJ_27 /* ConfigurateTests.swift in Sources */,
 				8E7562F61FB953D3008D59FC /* ConfigTests.swift in Sources */,
 				8E7562F41FB95344008D59FC /* ConfigFileTests.swift in Sources */,
 			);
@@ -305,13 +304,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				8E8B6E8F1FCE66BE00B844A4 /* FoundationConfigTypes.swift in Sources */,
 				8EE42F441FB8FEE60080D6D5 /* ConfigType.swift in Sources */,
+				8E3659A41FC03D1900F8B109 /* Stack.swift in Sources */,
 				8EE42F471FB8FEF70080D6D5 /* MapStack.swift in Sources */,
 				8E3659A11FBEA63000F8B109 /* Dictionary+KeyedAccessCollection.swift in Sources */,
 				8EE42F451FB8FEEA0080D6D5 /* KeyedAccessCollection.swift in Sources */,
 				8E7B3AB31FB9475E0015A002 /* ConfigFile.swift in Sources */,
 				8EE42F461FB8FEF50080D6D5 /* KeyedAccessCollectionStack.swift in Sources */,
-				OBJ_36 /* Configurate.swift in Sources */,
 				8EE42F4A1FB902EF0080D6D5 /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@ public struct Config: KeyedAccessCollectionStack, ConfigType {
     
     public typealias Key = String
     public typealias Value = Any
+    public typealias Element = AnyKeyedAccessCollection<String, Any>
     
     private var mapStack: MapStack<String, Any>
     
@@ -21,33 +22,30 @@ public struct Config: KeyedAccessCollectionStack, ConfigType {
     
     public init() {
         
-        self.mapStack = MapStack<String, Any>()
+        self.mapStack = MapStack()
     }
     
-    public func get(_ key: String) -> Any? {
+    public mutating func push(_ element: AnyKeyedAccessCollection<String, Any>) {
         
-        return mapStack.get(key)
+        mapStack.push(element)
     }
     
-    public mutating func push<KeyedAccessType: KeyedAccessCollection>(_ collection: KeyedAccessType)
-        where Config.Key == KeyedAccessType.Key,
-        Config.Value == KeyedAccessType.Value {
-        
-        mapStack.push(collection)
-    }
-    
-    @discardableResult public mutating func pop() -> AnyKeyedAccessCollection<String, Any> {
+    public mutating func pop() -> AnyKeyedAccessCollection<String, Any> {
         
         return mapStack.pop()
+    }
+    
+    public func makeIterator() -> IndexingIterator<[AnyKeyedAccessCollection<Key, Value>]> {
+        
+        return mapStack.makeIterator()
     }
 }
 
 extension Config {
     
-    public func include<KeyedAccessType>(_ provider: KeyedAccessType) -> Config
-        where KeyedAccessType: KeyedAccessCollection,
-        KeyedAccessType.Key == Key,
-        KeyedAccessType.Value == Any {
+    public func include<Provider: KeyedAccessCollection>(_ provider: Provider) -> Config
+        where Provider.Key == Key,
+        Provider.Value == Value {
             
         var mutableSelf = self
         
