@@ -22,7 +22,7 @@ public struct Config: KeyedAccessCollectionStack, ConfigType {
     
     public init() {
         
-        self.mapStack = MapStack<String, Any>()
+        self.mapStack = MapStack()
     }
     
     public mutating func push(_ element: AnyKeyedAccessCollection<String, Any>) {
