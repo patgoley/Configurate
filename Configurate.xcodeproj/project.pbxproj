@@ -37,9 +37,7 @@
 		8EE42F471FB8FEF70080D6D5 /* MapStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F401FB8FBF50080D6D5 /* MapStack.swift */; };
 		8EE42F4A1FB902EF0080D6D5 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F481FB902C90080D6D5 /* Config.swift */; };
 		OBJ_21 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_27 /* ConfigurateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* ConfigurateTests.swift */; };
 		OBJ_29 /* Configurate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Configurate::Configurate::Product" /* Configurate.framework */; };
-		OBJ_36 /* Configurate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Configurate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,9 +97,7 @@
 		8EE42F481FB902C90080D6D5 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		"Configurate::Configurate::Product" /* Configurate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Configurate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Configurate::ConfigurateTests::Product" /* ConfigurateTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = ConfigurateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_12 /* ConfigurateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurateTests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_9 /* Configurate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +161,6 @@
 		OBJ_11 /* ConfigurateTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_12 /* ConfigurateTests.swift */,
 				8E7562F51FB953D3008D59FC /* ConfigTests.swift */,
 				8E7562FC1FB96B1B008D59FC /* UserDefaultsConfigTests.swift */,
 				8E7562FE1FB96B5A008D59FC /* ProcessInfoConfigTests.swift */,
@@ -213,7 +208,6 @@
 		OBJ_8 /* Configurate */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_9 /* Configurate.swift */,
 				8EE42F481FB902C90080D6D5 /* Config.swift */,
 				8EE42F401FB8FBF50080D6D5 /* MapStack.swift */,
 				8E8B6E911FCE68D700B844A4 /* Protocols */,
@@ -317,7 +311,6 @@
 			files = (
 				8E7562FF1FB96B5A008D59FC /* ProcessInfoConfigTests.swift in Sources */,
 				8E7562FD1FB96B1B008D59FC /* UserDefaultsConfigTests.swift in Sources */,
-				OBJ_27 /* ConfigurateTests.swift in Sources */,
 				8E7562F61FB953D3008D59FC /* ConfigTests.swift in Sources */,
 				8E7562F41FB95344008D59FC /* ConfigFileTests.swift in Sources */,
 			);
@@ -335,7 +328,6 @@
 				8EE42F451FB8FEEA0080D6D5 /* KeyedAccessCollection.swift in Sources */,
 				8E7B3AB31FB9475E0015A002 /* ConfigFile.swift in Sources */,
 				8EE42F461FB8FEF50080D6D5 /* KeyedAccessCollectionStack.swift in Sources */,
-				OBJ_36 /* Configurate.swift in Sources */,
 				8EE42F4A1FB902EF0080D6D5 /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

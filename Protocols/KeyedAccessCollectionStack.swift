@@ -10,7 +10,6 @@ protocol KeyedAccessCollectionStack: KeyedAccessCollection, Stack
     Iterator.Element.Key == Key,
     Iterator.Element.Value == Value {
     
-    
 }
 
 extension KeyedAccessCollectionStack {
