@@ -25,11 +25,6 @@ public struct Config: KeyedAccessCollectionStack, ConfigType {
         self.mapStack = MapStack<String, Any>()
     }
     
-    public func get(_ key: String) -> Any? {
-        
-        return mapStack.get(key)
-    }
-    
     public mutating func push(_ element: AnyKeyedAccessCollection<String, Any>) {
         
         mapStack.push(element)

@@ -1,15 +1,11 @@
 //
-//  ConfigType.swift
-//  ConfiguratePackageDescription
+//  FoundationConfigTypes.swift
+//  Configurate
 //
-//  Created by Patrick Goley on 11/12/17.
+//  Created by Patrick Goley on 11/28/17.
 //
 
 import Foundation
-
-public protocol ConfigType: KeyedAccessCollection where Key == String, Value == Any {
-    
-}
 
 extension UserDefaults: ConfigType {
     

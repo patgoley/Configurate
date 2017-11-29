@@ -25,25 +25,12 @@ struct MapStack<K: Hashable, V>: KeyedAccessCollectionStack {
         self.stack = []
     }
     
-    func get(_ key: Key) -> Value? {
-        
-        for map in stack.reversed() {
-            
-            if let val = map.get(key) {
-                
-                return val
-            }
-        }
-        
-        return nil
-    }
-    
-    mutating func push(_ element: Element) {
+    mutating func push(_ element: AnyKeyedAccessCollection<Key, Value>) {
         
         stack.append(element)
     }
     
-    mutating func pop() -> Element {
+    mutating func pop() -> AnyKeyedAccessCollection<Key, Value> {
         
         guard let last = stack.last else { fatalError("Tried to pop an empty MapStack") }
         

@@ -5,12 +5,31 @@
 //  Created by Patrick Goley on 11/12/17.
 //
 
-protocol KeyedAccessCollectionStack: KeyedAccessCollection, Stack where Iterator.Element == AnyKeyedAccessCollection<Key, Value> {
+protocol KeyedAccessCollectionStack: KeyedAccessCollection, Stack
+    where Element: KeyedAccessCollection,
+    Iterator.Element.Key == Key,
+    Iterator.Element.Value == Value {
     
     
 }
 
 extension KeyedAccessCollectionStack {
+    
+    public func get(_ key: Key) -> Value? {
+        
+        for map in self {
+            
+            if let val = map.get(key) {
+                
+                return val
+            }
+        }
+        
+        return nil
+    }
+}
+
+extension KeyedAccessCollectionStack where Element == AnyKeyedAccessCollection<Key, Value> {
 
     mutating func push<KeyedAccessType: KeyedAccessCollection>(_ collection: KeyedAccessType)
         where KeyedAccessType.Key == Key,

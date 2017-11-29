@@ -30,6 +30,7 @@
 		8E7562FD1FB96B1B008D59FC /* UserDefaultsConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7562FC1FB96B1B008D59FC /* UserDefaultsConfigTests.swift */; };
 		8E7562FF1FB96B5A008D59FC /* ProcessInfoConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7562FE1FB96B5A008D59FC /* ProcessInfoConfigTests.swift */; };
 		8E7B3AB31FB9475E0015A002 /* ConfigFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B3AB11FB9458B0015A002 /* ConfigFile.swift */; };
+		8E8B6E8F1FCE66BE00B844A4 /* FoundationConfigTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8B6E8E1FCE66BE00B844A4 /* FoundationConfigTypes.swift */; };
 		8EE42F441FB8FEE60080D6D5 /* ConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F421FB8FC1C0080D6D5 /* ConfigType.swift */; };
 		8EE42F451FB8FEEA0080D6D5 /* KeyedAccessCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F3C1FB8FB4B0080D6D5 /* KeyedAccessCollection.swift */; };
 		8EE42F461FB8FEF50080D6D5 /* KeyedAccessCollectionStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE42F3E1FB8FB730080D6D5 /* KeyedAccessCollectionStack.swift */; };
@@ -90,6 +91,7 @@
 		8E8236B91FBD2A71003EE6BD /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		8E8236BB1FBD2B5A003EE6BD /* docker_linux_test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = docker_linux_test.sh; sourceTree = "<group>"; };
 		8E8236BC1FBD2B77003EE6BD /* run_tests.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run_tests.sh; sourceTree = "<group>"; };
+		8E8B6E8E1FCE66BE00B844A4 /* FoundationConfigTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationConfigTypes.swift; sourceTree = "<group>"; };
 		8EE42F3C1FB8FB4B0080D6D5 /* KeyedAccessCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedAccessCollection.swift; sourceTree = "<group>"; };
 		8EE42F3E1FB8FB730080D6D5 /* KeyedAccessCollectionStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedAccessCollectionStack.swift; sourceTree = "<group>"; };
 		8EE42F401FB8FBF50080D6D5 /* MapStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStack.swift; sourceTree = "<group>"; };
@@ -129,6 +131,27 @@
 			);
 			path = bin;
 			sourceTree = "<group>";
+		};
+		8E8B6E901FCE68A400B844A4 /* Config Types */ = {
+			isa = PBXGroup;
+			children = (
+				8E3659A01FBEA63000F8B109 /* Dictionary+KeyedAccessCollection.swift */,
+				8E8B6E8E1FCE66BE00B844A4 /* FoundationConfigTypes.swift */,
+				8E7B3AB11FB9458B0015A002 /* ConfigFile.swift */,
+			);
+			path = "Config Types";
+			sourceTree = SOURCE_ROOT;
+		};
+		8E8B6E911FCE68D700B844A4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8EE42F3C1FB8FB4B0080D6D5 /* KeyedAccessCollection.swift */,
+				8E3659A21FC03C7200F8B109 /* Stack.swift */,
+				8EE42F3E1FB8FB730080D6D5 /* KeyedAccessCollectionStack.swift */,
+				8EE42F421FB8FC1C0080D6D5 /* ConfigType.swift */,
+			);
+			path = Protocols;
+			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
@@ -192,13 +215,9 @@
 			children = (
 				OBJ_9 /* Configurate.swift */,
 				8EE42F481FB902C90080D6D5 /* Config.swift */,
-				8E7B3AB11FB9458B0015A002 /* ConfigFile.swift */,
-				8EE42F421FB8FC1C0080D6D5 /* ConfigType.swift */,
 				8EE42F401FB8FBF50080D6D5 /* MapStack.swift */,
-				8E3659A21FC03C7200F8B109 /* Stack.swift */,
-				8EE42F3E1FB8FB730080D6D5 /* KeyedAccessCollectionStack.swift */,
-				8EE42F3C1FB8FB4B0080D6D5 /* KeyedAccessCollection.swift */,
-				8E3659A01FBEA63000F8B109 /* Dictionary+KeyedAccessCollection.swift */,
+				8E8B6E911FCE68D700B844A4 /* Protocols */,
+				8E8B6E901FCE68A400B844A4 /* Config Types */,
 			);
 			name = Configurate;
 			path = Sources/Configurate;
@@ -308,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				8E8B6E8F1FCE66BE00B844A4 /* FoundationConfigTypes.swift in Sources */,
 				8EE42F441FB8FEE60080D6D5 /* ConfigType.swift in Sources */,
 				8E3659A41FC03D1900F8B109 /* Stack.swift in Sources */,
 				8EE42F471FB8FEF70080D6D5 /* MapStack.swift in Sources */,

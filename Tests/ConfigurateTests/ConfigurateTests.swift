@@ -7,14 +7,14 @@ class ConfigurateTests: XCTestCase {
         
         ProcessInfo.processInfo.setEnvironmentVar(name: "hello", value: "world")
         
-        let config = Configurate.withDefaults(ProcessInfo.processInfo)
+        let config = Configurate.with(ProcessInfo.processInfo)
         
         XCTAssertEqual(config["hello"], "world")
     }
     
     func testDictionaryFactory() {
         
-        let config = Configurate.withDefaults(["hello": "value"])
+        let config = Configurate.with(["hello": "value"])
         
         XCTAssertEqual(config["hello"], "value")
     }
