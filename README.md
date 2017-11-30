@@ -28,7 +28,7 @@ import PackageDescription
 let package = Package(
     name: "MyPackage",
     dependencies: [
-        .Package(url: "https://github.com/patgoley/Configurate.git", majorVersion: 1),
+        .Package(url: "https://github.com/patgoley/Configurate.git", majorVersion: 2),
     ]
 )
 ```
@@ -36,7 +36,7 @@ let package = Package(
 #### Cocoapods
 
 ```ruby
-pod 'Configurate', '~> 1.0'
+pod 'Configurate', '~> 2.0'
 ```
 
 ## License
