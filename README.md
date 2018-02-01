@@ -1,6 +1,6 @@
 # Configurate
 
-[![CocoaPods](https://img.shields.io/cocoapods/v/Configurate.svg)]() [![CocoaPods](https://img.shields.io/cocoapods/l/Configurate.svg)]()
+[![CocoaPods](https://img.shields.io/cocoapods/v/Configurate.svg)]() [![CocoaPods](https://img.shields.io/cocoapods/l/Configurate.svg)]() [![Travis](https://travis-ci.org/patgoley/Configurate.svg?branch=master)]() [![codecov](https://codecov.io/gh/patgoley/Configurate/branch/master/graph/badge.svg)]()
 
 Configurate is a package for building layered `Config` objects, which are essentially stacks of key-value collections.
 Configs are protocol based, so they can be implemented by any source that can provide a value for a given key.
@@ -28,7 +28,7 @@ import PackageDescription
 let package = Package(
     name: "MyPackage",
     dependencies: [
-        .Package(url: "https://github.com/patgoley/Configurate.git", majorVersion: 1),
+        .Package(url: "https://github.com/patgoley/Configurate.git", majorVersion: 2),
     ]
 )
 ```
@@ -36,7 +36,7 @@ let package = Package(
 #### Cocoapods
 
 ```ruby
-pod 'Configurate', '~> 1.0'
+pod 'Configurate', '~> 2.0'
 ```
 
 ## License

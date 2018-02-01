@@ -12,7 +12,7 @@ class ProcessInfoConfigTests: XCTestCase {
     
     func testProcessInfoProvider() {
         
-        ProcessInfo.processInfo.setEnvironmentVar(name: "wow", value: "process")
+        setenv("wow", "process", 1)
         
         let config = Config(ProcessInfo.processInfo)
         

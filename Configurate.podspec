@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Configurate'
-  s.version          = '1.0.0'
+  s.version          = '2.0.0'
   s.summary          = 'An abstract, cross-platform configuration library for Swift applications.'
 
   s.description      = <<-DESC

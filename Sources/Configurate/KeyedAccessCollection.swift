@@ -38,14 +38,6 @@ public struct AnyKeyedAccessCollection<Key: Hashable, Value>: KeyedAccessCollect
         _get = base.get
     }
     
-    public init(_ dict: [Key: Value]) {
-        
-        _get = { (key: Key) -> Value? in
-            
-            return dict[key]
-        }
-    }
-    
     public func get(_ key: Key) -> Value? {
         
         return _get(key)

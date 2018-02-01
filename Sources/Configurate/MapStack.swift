@@ -9,19 +9,15 @@ struct MapStack<K: Hashable, V>: KeyedAccessCollectionStack {
     
     typealias Key = K
     typealias Value = V
+    typealias Element = AnyKeyedAccessCollection<Key, Value>
     
-    private var stack: [AnyKeyedAccessCollection<Key, Value>]
+    private var stack: [Element]
     
-    init<Collection: KeyedAccessCollection>(keyValueCollection: Collection) where Collection.Key == Key, Collection.Value == Value {
+    init<Collection: KeyedAccessCollection>(keyValueCollection: Collection)
+        where Collection.Key == Key,
+        Collection.Value == Value {
         
         self.stack = [AnyKeyedAccessCollection(keyValueCollection)]
-    }
-    
-    init(dictionary: [Key: Value]) {
-        
-        let anyCollection = AnyKeyedAccessCollection(dictionary)
-        
-        self.stack = [anyCollection]
     }
     
     init() {
@@ -29,35 +25,22 @@ struct MapStack<K: Hashable, V>: KeyedAccessCollectionStack {
         self.stack = []
     }
     
-    func get(_ key: Key) -> Value? {
+    mutating func push(_ element: AnyKeyedAccessCollection<Key, Value>) {
         
-        for map in stack.reversed() {
-            
-            if let val = map.get(key) {
-                
-                return val
-            }
-        }
-        
-        return nil
-    }
-    
-    mutating func push<Collection>(_ collection: Collection) where Collection : KeyedAccessCollection, Key == Collection.Key, Value == Collection.Value {
-        
-        let container = collection as? AnyKeyedAccessCollection<Key, Value> ?? AnyKeyedAccessCollection(collection)
-        
-        stack.append(container)
+        stack.append(element)
     }
     
     mutating func pop() -> AnyKeyedAccessCollection<Key, Value> {
         
-        guard let last = stack.last else {
-            
-            fatalError("Tried to pop an empty MapStack")
-        }
+        guard let last = stack.last else { fatalError("Tried to pop an empty MapStack") }
         
         stack.remove(at: stack.endIndex - 1)
         
         return last
+    }
+    
+    func makeIterator() -> IndexingIterator<[AnyKeyedAccessCollection<Key, Value>]> {
+        
+        return stack.reversed().makeIterator()
     }
 }
